@@ -1,21 +1,20 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from './components/navBar.vue'
+
+const links = ["home", "info", "blogs"]
 </script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-    <HelloWorld msg="Vite + Vue" />
-    <RouterView />
+    <div class="flex flex-col w-full">
+      <div class="flex w-full">
+        <NavBar :list="links">
+          <template #logo>
+            <img src="./assets/Gx250.svg" />
+          </template>
+        </NavBar>
+      </div>
+      <div class="flex w-full">
+        <RouterView />
+      </div>
+    </div>
 </template>
-
-<style scoped>
-@import '/src/assets/base.css';
-</style>
